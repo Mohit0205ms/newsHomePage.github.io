@@ -1,0 +1,278 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+html{
+    font-size: 62.5%;
+    background-color:hsl(36, 100%, 99%);
+    /*1rem = 10px*/
+    overflow-x: hidden;
+}
+body{
+    width:100vw;
+    height:100vh;
+    overflow-x: hidden;
+}
+.body-opacity{
+    opacity:0.6;
+    background-color: rgb(160, 160, 160);
+}
+
+.Container{
+    padding:8rem;
+    height:10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu-list{
+    display: flex;
+    gap:6rem;
+    font-size:2rem;
+}
+
+#menu-list li{
+    list-style: none;
+}
+
+#menu-link:link,
+#menu-link:visited{
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s;
+}
+#menu-link:hover,
+#menu-link:active{
+    color: rgb(255, 38, 38);
+}
+.mobile-Navbar-btn{
+    display: none;
+    cursor: pointer;
+}
+.mobile-Nav-link{
+    width:4rem;
+    height:4rem;
+}
+#Close{
+    display: none;
+}
+
+
+/* ******************** Middle section ***************************** */
+
+
+.middleContainer{
+    width:100vw;
+    height:100vh;
+    padding:8rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top:-9rem;
+}
+.leftContainer{
+    width:72.31%;
+}
+#image{
+    width:900px;
+    height:400px;
+}
+.textContainer{
+    width:100%;
+    display: flex;
+    justify-content:space-around;
+    margin-top:4rem;
+}
+#headingContainer{
+    width:30%;
+}
+#contentContainer{
+    width:30%;
+}
+#heading{
+    font-size:5rem;
+}
+#content{
+    font-size:2rem;
+    color:grey;
+}
+#btn{
+    width:70%;
+    height:25%;
+    margin-top:4%;
+    background-color: rgb(238, 51, 51);
+    color: white;
+    letter-spacing:0.3rem;
+    font-family: bold;
+    border: none;
+}
+.rightContainer{
+    width:25%;
+    height:auto;
+    padding:2rem;
+    background-color:rgb(0, 0, 0);
+    color: white;
+}
+#headingRightConatainer{
+    font-size:5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 123, 0);
+}
+.sectionOne{
+    width:100%;
+    height:20%;
+    margin-bottom:10%;
+    margin-top:2rem;
+}
+#title{
+    display: block;
+    font-size:2.3rem;
+    margin-bottom:2rem;
+}
+#title:hover{
+    color:rgb(255, 151, 54);
+}
+#description{
+    font-size:1.7rem;
+}
+
+/******************* Footer Section ********************/
+
+.footerContainer{
+    width:100vw;
+    height:auto;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom:8rem;
+    display: flex;
+    margin-top:10rem;
+}
+
+.footerData{
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img{
+    width:100px;
+    height:130px;
+    margin-right:2rem;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.key{
+    font-size:4rem;
+    color:rgb(166, 165, 165);
+}
+
+.title{
+    font-size:2.4rem;
+    font-weight: 800;
+}
+
+.title-data{
+    font-size:1.5rem;
+    font-weight:600;
+    color:rgb(166, 165, 165);
+}
+
+/*********************** Media Queries *****************************/
+
+@media(max-width:376px){
+    .mobile-Navbar-btn{
+        display: block;
+        z-index: 999;
+    }
+    .Container{
+        padding:2rem;
+        position:relative;
+    }
+    .Navbar{
+        width:70%;
+        height:100vh;
+        background-color:white;
+        position: absolute;
+        top: 0;
+        right:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column ;
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    #menu-list{
+        flex-direction: column;
+    }
+    .active .Navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility:visible;
+        pointer-events: auto;
+    }
+    .active #Open{
+        display:none;
+    }
+    .active #Close{
+        display: block;
+    }
+    .middleContainer{
+        flex-direction: column;
+    }
+    .leftContainer{
+        width:100%;
+    }
+    #image{
+        width:90vw;
+        height:50vh;
+        margin-left:-30%;
+    }
+    .textContainer{
+        flex-direction: column;
+    }
+    #headingContainer{
+        width:80vw;
+        margin-left:-3rem;
+        margin-bottom:2rem;
+    }
+    #contentContainer{
+        width:80vw;
+        margin-left:-3rem;
+        margin-bottom:2rem;
+    }
+    #btn{
+        width:70%;
+        height:4rem;
+    }
+    .rightContainer{
+        width:90vw;
+        margin-left:-6rem;
+    }
+    .footerContainer{
+        display:block;
+        height:640px;
+        margin-top:700px;
+        padding:2rem;
+    }
+    
+    .footerData{
+        width:100%;
+        height:25%;
+        margin-bottom:5rem;
+    }
+    
+}
